@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Lista de Tarefas</title>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header><h1><strong>Minha lista de tarefas</strong></h1></header>
+    <div id="form">
+        <form id="task_form">
+            <input type="text" placeholder="Nome" id="task_name">
+            <select id="task_status">
+                <option value="fazer">Para Fazer:</option>
+                <option value="fazendo">Fazendo:</option>
+                <option value="feito">Feito:</option>
+            </select>
+            <input type="date" placeholder="Data" id="task_date">
+            <input type="hidden" id="task_id" value="">
+            <button type="submit">Add</button>
+        </form>
+        <button id="clear_button">Apagar tudo</button>
+    </div>
+    <div id="fazer_list">
+        <h3>Para fazer:</h3>
+        <ul id="fazer"></ul>
+    </div>
+    <div id="fazendo_list">
+        <h3>Fazendo:</h3>
+        <ul id="fazendo"></ul>
+    </div>
+    <div id="feito_list">
+        <h3>Feito:</h3>
+        <ul id="feito"></ul>
+    </div>
+
+    <script src="app.js"></script> 
+   <script>
+    window.onload = function() {
+            loadGoogleCalendarAPI();
+        };
+   </script>
+</body>
+
+</html>
